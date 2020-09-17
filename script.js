@@ -3,7 +3,7 @@ let today = new Date();
 let date = (today.getDate() + 1) + '/' + today.getMonth() + '/' + today.getFullYear();
 let queryUrl;
 if (localStorage.getItem("last") !== null) {
-    queryUrl = `https://api.openweathermap.org/data/2.5/weather?q=${localStorage.getItem('last')},aus&units=metric&APPID=3b5715c4cc3d80c499e1192a073d5982`;
+    queryUrl = `https://api.openweathermap.org/data/2.5/weather?q=${localStorage.getItem('last')},us&units=metric&APPID=3b5715c4cc3d80c499e1192a073d5982`;
     $.ajax({
         url: queryUrl,
         method: "GET"
@@ -27,7 +27,7 @@ $('#search').submit(function (e) {
     e.preventDefault();
     let userInput = $('#userInput').val().trim();
     localStorage.setItem('last', userInput)
-    queryUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userInput},aus&units=metric&APPID=3b5715c4cc3d80c499e1192a073d5982`;
+    queryUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userInput},us&units=metric&APPID=3b5715c4cc3d80c499e1192a073d5982`;
     $.ajax({
         url: queryUrl,
         method: "GET"
@@ -47,3 +47,21 @@ $('#search').submit(function (e) {
     });
     $("#userInput").val('');
   })
+
+  function cToF(celsius) 
+{
+  var cTemp = celsius;
+  var cToFahr = cTemp * 9 / 5 + 32;
+  var message = cTemp+'\xB0C is ' + cToFahr + ' \xB0F.';
+    console.log(message);
+}
+
+function fToC(fahrenheit) 
+{
+  var fTemp = fahrenheit;
+  var fToCel = (fTemp - 32) * 5 / 9;
+  var message = fTemp+'\xB0F is ' + fToCel + '\xB0C.';
+    console.log(message);
+} 
+cToF(60);
+fToC(45);
