@@ -1,42 +1,44 @@
-*{
-    box-sizing: border-box;
-}
-
-/* body styling */
-html, body{
-    height: 100%;
-}
-
-.row{
-    min-height: 100%;
-    height: 100%;
-    margin: 0;
-}
-
-#displayContainer{
-    padding: 0;
-}
-
-/* nav styling */
-#navH{
-    color:white;
-    margin: auto;
-    padding-bottom: 10px;
-}
-
-/* search container styling */
-label{
-    font-size: 20px;
-}
-
-#searchContainer{
-    color:white;
-    background-color: slategray;
-    min-height: 100%;
-}
-
-#userInput{
-    padding: 3px;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-}
+body {
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .heading {
+    background-color: #3c3c3c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  input {
+    width: 75%;
+  }
+  
+  #city-list {
+    width: 22rem;
+  }
+  
+  #city-date-icon,
+  #city-name,
+  #current-icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: center/space-around/space-between;
+  }
+  
+  h6 {
+    font-weight: bold;
+  }
+  
+  h4 {
+      margin: 5px;
+  }
+  
+  #forecast-cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: center/space-between;
+  }
+  
+  .forecast {
+      margin: 10px;
+  }
